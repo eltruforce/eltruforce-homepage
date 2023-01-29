@@ -1,10 +1,17 @@
 import {
   ColorScheme,
   ColorSchemeProvider,
-  MantineProvider
+  MantineProvider,
+  Tuple
 } from '@mantine/core'
-import { ReactNode, useState } from 'react'
+import { CSSProperties, ReactNode, useState } from 'react'
 import colors from './colors'
+
+interface Heading {
+  fontSize: CSSProperties['fontSize']
+  fontWeight: CSSProperties['fontWeight']
+  lineHeight: CSSProperties['lineHeight']
+}
 
 const config = initialColorScheme => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
@@ -12,56 +19,59 @@ const config = initialColorScheme => {
   )
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'))
-  return { colorScheme, toggleColorScheme }
+
+  const theme = {
+    globalStyles: theme => ({
+      body: {
+        backgroundColor:
+          theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
+      }
+    }),
+    colorScheme: colorScheme,
+    colors: { grassTeal: colors },
+    headings: { fontFamily: 'M PLUS Rounded 1c' },
+    components: {
+      Title: {
+        styles: theme => ({
+          'section-title': {
+            textDecoration: 'underline',
+            fontSize: 20,
+            textUnderlineOffset: 6,
+            textDecorationColor: '#525252',
+            textDecorationThickness: 4,
+            marginTop: 3,
+            marginBottom: 4
+          }
+        })
+      },
+      Link: {
+        styles: theme => ({
+          item: {
+            color:
+              theme.colorScheme === 'dark'
+                ? theme.colors.pink[3]
+                : theme.colors.blue[6],
+            textUnderlineOffset: 3
+          }
+        })
+      }
+    }
+  }
+  return { colorScheme, toggleColorScheme, theme }
 }
 
-const Theme = ({ children, currentColorScheme }) => {
-  const { colorScheme, toggleColorScheme } = config(currentColorScheme)
+const MyMantineProvider = ({ children, currentColorScheme }) => {
+  const { colorScheme, toggleColorScheme, theme } = config(currentColorScheme)
   return (
     <ColorSchemeProvider
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <MantineProvider
-        theme={{
-          colorScheme,
-          headings: { fontFamily: 'M PLUS Rounded 1c' },
-          colors: { grassTeal: colors },
-          primaryColor: 'grassTeal',
-          components: {
-            Title: {
-              styles: theme => ({
-                'section-title': {
-                  textDecoration: 'underline',
-                  fontSize: 20,
-                  textUnderlineOffset: 6,
-                  textDecorationColor: '#525252',
-                  textDecorationThickness: 4,
-                  marginTop: 3,
-                  marginBottom: 4
-                }
-              })
-            },
-            Link: {
-              styles: theme => ({
-                item: {
-                  color:
-                    theme.colorScheme === 'dark'
-                      ? theme.colors.pink[3]
-                      : theme.colors.blue[6],
-                  textUnderlineOffset: 3
-                }
-              })
-            }
-          }
-        }}
-        withGlobalStyles
-        withNormalizeCSS
-      >
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
         {children}
       </MantineProvider>
     </ColorSchemeProvider>
   )
 }
 
-export default Theme
+export default MyMantineProvider

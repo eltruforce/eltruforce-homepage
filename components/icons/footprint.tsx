@@ -10,10 +10,9 @@ const FootprintIcon = props => {
       width="25px"
       height="25px"
       viewBox="10 -10 160 215"
-      enable-background="new 0 0 160 215"
+      // enable-background="new 0 0 160 215"
       // xml:space="preserve"
     >
-      {' '}
       <image
         id="image0"
         width="160"
