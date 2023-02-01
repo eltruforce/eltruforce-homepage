@@ -1,5 +1,3 @@
-import { ColorScheme, MantineProvider } from '@mantine/core'
-import { useState } from 'react'
 import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
 import MyMantineProvider from '../libs/theme'

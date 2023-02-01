@@ -2,13 +2,28 @@ import {
   Avatar,
   Box,
   Container,
+  createStyles,
   Text,
   Title,
   useMantineColorScheme
 } from '@mantine/core'
+import Section from '../components/section'
+
+const useStyles = createStyles(theme => ({
+  'section-title': {
+    textDecoration: 'underline',
+    fontSize: 20,
+    textUnderlineOffset: 6,
+    textDecorationColor: '#525252',
+    textDecorationThickness: 4,
+    marginTop: 12,
+    marginBottom: 16
+  }
+}))
 
 const Page = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const { classes, theme } = useStyles()
   return (
     <Container size="sm">
       <Box
@@ -43,7 +58,9 @@ const Page = () => {
           <Avatar
             sx={theme => ({
               borderColor:
-                theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.cyan[6],
+                theme.colorScheme === 'dark'
+                  ? theme.colors.gray[0]
+                  : theme.colors.cyan[6],
               borderWidth: 2,
               borderStyle: 'solid'
             })}
@@ -55,6 +72,13 @@ const Page = () => {
           />
         </Box>
       </Box>
+
+      <Section delay={0.1}>
+        <Title order={3} className={classes['section-title']}>
+          Work
+        </Title>
+        <Text>Paragraph</Text>
+      </Section>
     </Container>
   )
 }
