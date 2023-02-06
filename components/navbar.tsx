@@ -1,16 +1,11 @@
 import {
   Box,
   Burger,
-  Button,
-  Center,
-  ChevronIcon,
   Container,
+  createStyles,
   Flex,
   Group,
   Menu,
-  NavLink,
-  SelectChevronIcon,
-  Stack,
   Title,
   useMantineColorScheme
 } from '@mantine/core'
@@ -18,21 +13,44 @@ import Link from 'next/link'
 import Logo from './logo'
 import ThemeToggleButton from './theme-toggle-button'
 
+const useStyles = createStyles(theme => ({
+  linkMenuMobile: {
+    textDecoration: 'inherit',
+    '&:hover': {
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.dark[0]
+          : theme.colors.dark[6],
+      textDecoration: 'underline',
+      textUnderlineOffset: 3
+    }
+  },
+  linkMenuDesktop: {
+    textDecoration: 'inherit',
+    padding: 2,
+    '&:hover': {
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.dark[0]
+          : theme.colors.dark[6],
+      textDecoration: 'underline',
+      textUnderlineOffset: 3
+    }
+  }
+}))
+
 const LinkItem = ({ href, path, children }) => {
+  const { classes, theme } = useStyles()
   const active = path === href
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
-  const inactiveColor = colorScheme === 'dark' ? 'gray.0' : 'gray.2'
   return (
     <Link
       href={href}
       scroll={false}
-      color={active ? '#202023' : inactiveColor}
       style={{
-        textDecoration: 'inherit',
-        padding: 2,
-        background: active ? 'glassTeal' : undefined,
-        color: 'inherit'
+        background: active ? '#66D9E8' : undefined,
+        color: active ? '#202023' : 'inherit'
       }}
+      className={classes.linkMenuDesktop}
       passHref
     >
       {children}
@@ -43,6 +61,7 @@ const LinkItem = ({ href, path, children }) => {
 const Navbar = props => {
   const { path } = props
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const { classes, theme } = useStyles()
 
   return (
     <Box
@@ -98,39 +117,23 @@ const Navbar = props => {
                 />
               </Menu.Target>
               <Menu.Dropdown>
-                <Link
-                  href="/"
-                  passHref
-                  style={{
-                    textDecoration: 'inherit'
-                  }}
-                >
+                <Link href="/" passHref className={classes.linkMenuMobile}>
                   <Menu.Item>About</Menu.Item>
                 </Link>
-                <Link
-                  href="/works"
-                  passHref
-                  style={{
-                    textDecoration: 'inherit'
-                  }}
-                >
+                <Link href="/works" passHref className={classes.linkMenuMobile}>
                   <Menu.Item>Works</Menu.Item>
                 </Link>
                 <Link
                   href="/gallery"
                   passHref
-                  style={{
-                    textDecoration: 'inherit'
-                  }}
+                  className={classes.linkMenuMobile}
                 >
                   <Menu.Item>Gallery</Menu.Item>
                 </Link>
                 <Link
                   href="https://github.com/eltruforce/eltruforce-homepage"
                   passHref
-                  style={{
-                    textDecoration: 'inherit'
-                  }}
+                  className={classes.linkMenuMobile}
                 >
                   <Menu.Item>View Source</Menu.Item>
                 </Link>

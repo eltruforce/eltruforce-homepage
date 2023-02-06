@@ -3,14 +3,7 @@ import {
   ColorSchemeProvider,
   MantineProvider
 } from '@mantine/core'
-import { CSSProperties, ReactNode, useState } from 'react'
-import colors from './colors'
-
-interface Title {
-  fontSize: CSSProperties['fontSize']
-  fontWeight: CSSProperties['fontWeight']
-  lineHeight: CSSProperties['lineHeight']
-}
+import { useState } from 'react'
 
 const config = initialColorScheme => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
@@ -27,21 +20,7 @@ const config = initialColorScheme => {
       }
     }),
     colorScheme: colorScheme,
-    colors: { grassTeal: colors },
-    headings: { fontFamily: 'M PLUS Rounded 1c' },
-    components: {
-      Link: {
-        styles: theme => ({
-          item: {
-            color:
-              theme.colorScheme === 'dark'
-                ? theme.colors.pink[3]
-                : theme.colors.blue[6],
-            textUnderlineOffset: 3
-          }
-        })
-      }
-    }
+    headings: { fontFamily: 'M PLUS Rounded 1c' }
   }
   return { colorScheme, toggleColorScheme, theme }
 }

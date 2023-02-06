@@ -1,4 +1,4 @@
-const FootprintIcon = props => {
+const ETprintIcon = props => {
   return (
     <svg
       version="1.1"
@@ -65,4 +65,4 @@ MDQrMDA6MDDLFh4sAAAAAElFTkSuQmCC"
   )
 }
 
-export default FootprintIcon
+export default ETprintIcon

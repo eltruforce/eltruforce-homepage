@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Text, useMantineColorScheme } from '@mantine/core'
 import Link from 'next/link'
-import FootprintIcon from './icons/footprint'
+import ETprintIcon from './icons/footprint'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -32,7 +32,7 @@ const Logo = () => {
       }}
     >
       <LogoBox>
-        <FootprintIcon />
+        <ETprintIcon />
         <Text
           color={colorScheme === 'light' ? 'gray.9' : 'gray.0'}
           fw="bold"
