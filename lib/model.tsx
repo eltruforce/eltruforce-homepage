@@ -18,7 +18,6 @@ export function Model(props) {
 
   // const { actions, names } = useAnimations(animations, group)
   const { actions, names } = useAnimations(animations, group)
-  console.log(materials)
 
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play()
@@ -28,8 +27,8 @@ export function Model(props) {
       <group name="Scene">
         <group
           name="Armature"
-          position={[-0.01, -0.14, 0.1]}
-          rotation={[-0.11, -0.73, 0]}
+          // position={[-0.01, -0.14, 0.1]}
+          // rotation={[-0.11, -0.73, 0]}
         >
           <primitive object={nodes.Hips} />
           <skinnedMesh

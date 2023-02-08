@@ -2,8 +2,6 @@ import { Box, Center, Container, Loader } from '@mantine/core'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Navbar from '../navbar'
-import VoxelMegaman from '../voxel-megaman'
-import { MegamanContainer, MegamanSpinner } from '../voxel-megaman-loader'
 import VoxelMegamanLoader from '../voxel-megaman-loader'
 
 const LazyVoxelMegaman = dynamic(() => import('../voxel-megaman'), {
