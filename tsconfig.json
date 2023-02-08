@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/layouts/main.tsx", "pages/index.tsx", "components/icons/footprint.tsx"  ],
+, "components/layouts/main.tsx", "pages/index.tsx", "components/icons/footprint.tsx", "lib/model.tsx"  ],
   "exclude": [
     "node_modules"
   ]
