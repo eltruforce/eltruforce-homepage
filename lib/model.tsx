@@ -11,7 +11,12 @@ export function Model(props) {
   const group = useRef()
 
   const texture = useTexture('/download.png')
-  const { nodes, materials, animations } = useGLTF('/megaman-transformed.glb')
+  // const { nodes, materials, animations } = useGLTF('/megaman-transformed.glb')
+  const data = useGLTF('/megaman-transformed.glb') as any
+
+  const { nodes, materials, animations } = data
+
+  // const { actions, names } = useAnimations(animations, group)
   const { actions, names } = useAnimations(animations, group)
   console.log(materials)
 
