@@ -31,7 +31,7 @@ export default function VoxelMegaman() {
         shadows
         camera={{
           position: [-1.5, -1, 2.5],
-          fov: 35
+          fov: 40
         }}
       >
         <AntimatedVoxel />
