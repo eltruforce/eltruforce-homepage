@@ -49,7 +49,7 @@ export default function VoxelMegaman() {
       >
         <AntimatedVoxel activeAnimation={activeAnimation} />
       </Canvas>
-      <Group position="center">
+      <Group position="center" mt={10}>
         <Button
           compact
           color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
