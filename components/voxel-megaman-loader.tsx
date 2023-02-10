@@ -27,7 +27,7 @@ export const MegamanContainer = forwardRef(
       style={{ marginBottom: '30px' }}
       mt={{ xs: '10px', sm: '15px', md: '20px' }}
       mb={{ xs: '40px', sm: '50px', md: '60px' }}
-      w={{ xs: 240, sm: 360, md: 480 }}
+      w={{ xs: 320, sm: 440, md: 560 }}
       h={{ xs: 240, sm: 320, md: 400 }}
       pos="relative"
     >

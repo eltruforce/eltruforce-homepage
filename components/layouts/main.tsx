@@ -1,4 +1,4 @@
-import { Box, Center, Container, Loader } from '@mantine/core'
+import { Box, Center, Container } from '@mantine/core'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Navbar from '../navbar'

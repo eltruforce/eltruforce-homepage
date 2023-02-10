@@ -2,10 +2,16 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Model } from '../lib/model'
 import { MegamanContainer, MegamanSpinner } from './voxel-megaman-loader'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { Button, Group, useMantineColorScheme } from '@mantine/core'
 
-const AntimatedVoxel = () => {
+interface Props {
+  activeAnimation: boolean
+}
+
+const AntimatedVoxel = (props: Props) => {
   const orbitRef = useRef(null)
+  const { activeAnimation } = props
 
   useFrame(({ clock }) => {
     let frame = clock.getElapsedTime()
@@ -18,13 +24,20 @@ const AntimatedVoxel = () => {
       <OrbitControls ref={orbitRef} autoRotate />
       <ambientLight />
       <group position={[0, -1, 0]}>
-        <Model />
+        <Model activeAnimation={activeAnimation} />
       </group>
     </>
   )
 }
 
 export default function VoxelMegaman() {
+  const [activeAnimation, setActiveAnimation] = useState(false)
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+
+  function handleClick() {
+    setActiveAnimation(!activeAnimation)
+  }
+
   return (
     <MegamanContainer>
       <Canvas
@@ -34,8 +47,24 @@ export default function VoxelMegaman() {
           fov: 40
         }}
       >
-        <AntimatedVoxel />
+        <AntimatedVoxel activeAnimation={activeAnimation} />
       </Canvas>
+      <Group position="center">
+        <Button
+          compact
+          color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+          variant={activeAnimation ? 'filled' : 'light'}
+          styles={theme => ({
+            root: {
+              color: activeAnimation ? theme.colors.dark[7] : undefined,
+              scroll: false
+            }
+          })}
+          onClick={handleClick}
+        >
+          RGB Armor
+        </Button>
+      </Group>
     </MegamanContainer>
   )
 }

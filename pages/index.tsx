@@ -50,6 +50,7 @@ const Page = () => {
         bg={colorScheme === 'dark' ? 'dark.5' : 'gray.3'}
         p={9}
         mb={18}
+        mt={50}
       >
         Hello, I&apos;m a novice web developer based in Peru!
       </Box>
