@@ -51,7 +51,7 @@ const Page = () => {
         p={9}
         mb={18}
       >
-        Hello, I&apos;m a novice web developer based in Peru!
+        Hi there! I&apos;m a novice web developer based in Peru!
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box sx={{ flexGrow: 1 }}>
@@ -94,15 +94,15 @@ const Page = () => {
           About Me
         </Title>
         <Paragraph>
-          Hi there! I'm a Bachelor of Electronic Engineering based in Peru and
-          currently moving to New Zealand. I've had the opportunity to work on
-          some exciting projects that bring technology to the fields of
-          medicine, art, and services. I've had a chance to gain experience in
-          various industries, including mining, web development, and deep
-          learning. In my free time, I love combining my technical skills with
-          my artistic side through personal projects. I'm always on the lookout
-          for new and interesting things to learn and explore, so I'm excited to
-          see what opportunities this next step in my career brings.
+          I'm a Bachelor of Electronic Engineering based in Peru and currently
+          moving to New Zealand. I've had the opportunity to work on some
+          exciting projects that bring technology to the fields of medicine,
+          art, and services. I've had a chance to gain experience in various
+          industries, including mining, web development, and deep learning. In
+          my free time, I love combining my technical skills with my artistic
+          side through personal projects. I'm always on the lookout for new and
+          interesting things to learn and explore, so I'm excited to see what
+          opportunities this next step in my career brings.
         </Paragraph>
         <Box sx={{ textAlign: 'center' }} my={16}>
           <Link href="/works" scroll={false} passHref>
