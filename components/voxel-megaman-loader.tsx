@@ -30,19 +30,19 @@ const useStyles = createStyles(theme => ({
   },
   spinner: {
     [theme.fn.smallerThan('xs')]: {
-      marginLeft: -25,
+      marginLeft: -30,
       mt: 0
     },
     [theme.fn.largerThan('xs')]: {
-      marginLeft: -26,
+      marginLeft: -29.5,
       mt: 0
     },
     [theme.fn.largerThan('sm')]: {
-      marginLeft: -27,
+      marginLeft: -29,
       mt: 0
     },
     [theme.fn.largerThan('md')]: {
-      marginLeft: -28,
+      marginLeft: -28.5,
       mt: 0
     }
   }
