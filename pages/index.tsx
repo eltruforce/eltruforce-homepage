@@ -50,7 +50,6 @@ const Page = () => {
         bg={colorScheme === 'dark' ? 'dark.5' : 'gray.3'}
         p={9}
         mb={18}
-        mt={50}
       >
         Hello, I&apos;m a novice web developer based in Peru!
       </Box>
@@ -106,24 +105,23 @@ const Page = () => {
           see what opportunities this next step in my career brings.
         </Paragraph>
         <Box sx={{ textAlign: 'center' }} my={16}>
-          <Button
-            component="a"
-            // target="_blank"
-            href="/works"
-            rightIcon={<BiChevronRight />}
-            color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
-            styles={theme => ({
-              root: {
-                color:
-                  theme.colorScheme === 'dark'
-                    ? theme.colors.dark[7]
-                    : theme.colors.gray[0],
-                scroll: false
-              }
-            })}
-          >
-            My portfolio
-          </Button>
+          <Link href="/works" scroll={false} passHref>
+            <Button
+              rightIcon={<BiChevronRight />}
+              color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+              styles={theme => ({
+                root: {
+                  color:
+                    theme.colorScheme === 'dark'
+                      ? theme.colors.dark[7]
+                      : theme.colors.gray[0],
+                  scroll: false
+                }
+              })}
+            >
+              My portfolio
+            </Button>
+          </Link>
         </Box>
       </Section>
       <Section delay={0.2}>

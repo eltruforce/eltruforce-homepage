@@ -4,6 +4,7 @@ import { Model } from '../lib/model'
 import { MegamanContainer, MegamanSpinner } from './voxel-megaman-loader'
 import { useRef, useState } from 'react'
 import { Button, Group, useMantineColorScheme } from '@mantine/core'
+import { BiPlay, BiPlayCircle } from 'react-icons/bi'
 
 interface Props {
   activeAnimation: boolean
@@ -44,25 +45,31 @@ export default function VoxelMegaman() {
         shadows
         camera={{
           position: [-1.5, -1, 2.5],
-          fov: 40
+          fov: 50
         }}
       >
         <AntimatedVoxel activeAnimation={activeAnimation} />
       </Canvas>
-      <Group position="center" mt={10}>
+      <Group position="center" mt={0}>
         <Button
           compact
+          leftIcon={
+            <BiPlayCircle
+              style={{ marginRight: -5, marginLeft: -2.5 }}
+              size={18}
+            />
+          }
           color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
-          variant={activeAnimation ? 'filled' : 'light'}
+          variant={activeAnimation ? 'light' : 'filled'}
           styles={theme => ({
             root: {
-              color: activeAnimation ? theme.colors.dark[7] : undefined,
+              color: activeAnimation ? undefined : theme.colors.dark[7],
               scroll: false
             }
           })}
           onClick={handleClick}
         >
-          RGB Armor
+          Play RGB
         </Button>
       </Group>
     </MegamanContainer>
