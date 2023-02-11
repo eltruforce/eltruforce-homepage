@@ -5,25 +5,25 @@ const useStyles = createStyles(theme => ({
   'box-container': {
     [theme.fn.smallerThan('xs')]: {
       height: 250,
-      width: 250,
+      width: 210,
       marginTop: -20,
       marginBottom: 60
     },
     [theme.fn.largerThan('xs')]: {
       height: 340,
-      width: 340,
+      width: 300,
       marginTop: -30,
       marginBottom: 65
     },
     [theme.fn.largerThan('sm')]: {
       height: 430,
-      width: 430,
+      width: 390,
       marginTop: -50,
       marginBottom: 70
     },
     [theme.fn.largerThan('md')]: {
       height: 520,
-      width: 520,
+      width: 480,
       marginTop: -70,
       marginBottom: 75
     }
