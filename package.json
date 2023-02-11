@@ -22,6 +22,7 @@
     "@react-three/postprocessing": "^2.7.0",
     "@tabler/icons": "^2.1.2",
     "boxicons": "^2.1.4",
+    "cookies-next": "^2.1.1",
     "framer-motion": "^8.4.0",
     "next": "^13.1.5",
     "react": "^18.2.0",

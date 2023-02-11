@@ -3,14 +3,20 @@ import {
   ColorSchemeProvider,
   MantineProvider
 } from '@mantine/core'
+import { setCookie } from 'cookies-next'
 import { useState } from 'react'
 
-const config = initialColorScheme => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(
-    (initialColorScheme = 'dark')
-  )
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'))
+const config = (initialColorScheme: ColorScheme) => {
+  const [currentColorScheme, setColorScheme] =
+    useState<ColorScheme>(initialColorScheme)
+  const toggleColorScheme = (value?: ColorScheme) => {
+    const nextColorScheme =
+      value || (currentColorScheme === 'dark' ? 'light' : 'dark')
+    setColorScheme(nextColorScheme)
+    setCookie('mantine-color-scheme', nextColorScheme, {
+      maxAge: 60 * 60 * 24 * 30
+    })
+  }
 
   const theme = {
     globalStyles: theme => ({
@@ -19,17 +25,17 @@ const config = initialColorScheme => {
           theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
       }
     }),
-    colorScheme: colorScheme,
+    colorScheme: currentColorScheme,
     headings: { fontFamily: 'M PLUS Rounded 1c' }
   }
-  return { colorScheme, toggleColorScheme, theme }
+  return { currentColorScheme, toggleColorScheme, theme }
 }
 
-const MyMantineProvider = ({ children, currentColorScheme }) => {
-  const { colorScheme, toggleColorScheme, theme } = config(currentColorScheme)
+const MyMantineProvider = ({ children, colorScheme }) => {
+  const { currentColorScheme, toggleColorScheme, theme } = config(colorScheme)
   return (
     <ColorSchemeProvider
-      colorScheme={colorScheme}
+      colorScheme={currentColorScheme}
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
