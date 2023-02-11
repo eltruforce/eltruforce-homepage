@@ -8,7 +8,7 @@ const thumbWebXR = '/images/works/webxr_examples.png'
 const Works = () => {
   return (
     <Layout title="Works">
-      <Container>
+      <Container size="sm">
         <Title order={3} size={20} mb={16}>
           Personal Works
         </Title>

@@ -14,7 +14,7 @@ import Link from 'next/link'
 const NotFound = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
   return (
-    <Container>
+    <Container size="sm">
       <Title order={1}>Not Found</Title>
       <Text color="dimmed">
         The page you&apos;re trying to open does not exist.
