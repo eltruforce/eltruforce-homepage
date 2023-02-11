@@ -52,6 +52,7 @@ export default function VoxelMegaman() {
       </Canvas>
       <Group position="center" mt={0}>
         <Button
+        radius="xl"
           compact
           leftIcon={
             <BiPlayCircle
@@ -63,7 +64,13 @@ export default function VoxelMegaman() {
           variant={activeAnimation ? 'light' : 'filled'}
           styles={theme => ({
             root: {
-              color: activeAnimation ? undefined : theme.colors.dark[7],
+              color: activeAnimation
+                ? colorScheme === 'dark'
+                  ? undefined
+                  : undefined
+                : colorScheme === 'light'
+                ? theme.colors.gray[0]
+                : theme.colors.dark[7],
               scroll: false
             }
           })}
