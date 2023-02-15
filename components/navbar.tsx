@@ -10,6 +10,7 @@ import {
   useMantineColorScheme
 } from '@mantine/core'
 import Link from 'next/link'
+import { IoLogoGithub } from 'react-icons/io5'
 import Logo from './logo'
 import ThemeToggleButton from './theme-toggle-button'
 
@@ -103,6 +104,16 @@ const Navbar = props => {
           <LinkItem href="/gallery" path={path}>
             Gallery
           </LinkItem>
+          <Link
+            className={classes.linkMenuDesktop}
+            style={{
+              color: 'inherit'
+            }}
+            target="_blank"
+            href="https://github.com/eltruforce/eltruforce-homepage"
+          >
+            <IoLogoGithub style={{ marginBottom: '-2px' }} /> View Source
+          </Link>
         </Group>
         <Group position="right" sx={theme => ({ flex: 1 })}>
           <ThemeToggleButton />
