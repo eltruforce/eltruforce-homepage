@@ -4,12 +4,15 @@ import {
   Button,
   Container,
   createStyles,
+  List,
   Text,
   Title,
   useMantineColorScheme
 } from '@mantine/core'
 import Link from 'next/link'
 import { BiChevronRight } from 'react-icons/bi'
+import { BsTelegram } from 'react-icons/bs'
+import { IoLogoGithub, IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io5'
 import { BioSection, BioYear } from '../components/bio'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
@@ -107,7 +110,7 @@ const Page = () => {
         <Box sx={{ textAlign: 'center' }} my={16}>
           <Link href="/works" scroll={false} passHref>
             <Button
-              rightIcon={<BiChevronRight />}
+              rightIcon={<BiChevronRight size={18} />}
               color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
               styles={theme => ({
                 root: {
@@ -118,6 +121,7 @@ const Page = () => {
                   scroll: false
                 }
               })}
+              sx={{ fontSize: 16 }}
             >
               My portfolio
             </Button>
@@ -212,6 +216,93 @@ const Page = () => {
           Music, Pixel Art, Play Musical Instruments, Deep Learning, Videogames,
           Blender
         </Paragraph>
+      </Section>
+      <Section delay={0.5}>
+        <Title order={3} className={classes['section-title']}>
+          Contact Me
+        </Title>
+        <List style={{ listStyleType: 'none' }}>
+          <List.Item>
+            <Link
+              href="https://github.com/eltruforce"
+              target="_blank"
+              className={classes.link}
+            >
+              <Button
+                variant="subtle"
+                color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+                leftIcon={<IoLogoGithub size={16} />}
+                sx={{ fontSize: 16 }}
+              >
+                @eltruforce
+              </Button>
+            </Link>
+          </List.Item>
+          <List.Item>
+            <Link
+              href="https://wa.me/51976684018"
+              target="_blank"
+              className={classes.link}
+            >
+              <Button
+                variant="subtle"
+                color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+                leftIcon={<IoLogoWhatsapp size={16} />}
+                sx={{ fontSize: 16 }}
+              >
+                +51 976684018
+              </Button>
+            </Link>
+          </List.Item>
+          <List.Item>
+            <Link
+              href="https://t.me/eltruforce"
+              target="_blank"
+              className={classes.link}
+            >
+              <Button
+                variant="subtle"
+                color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+                leftIcon={<BsTelegram size={16} />}
+                sx={{ fontSize: 16 }}
+              >
+                @eltruforce
+              </Button>
+            </Link>
+          </List.Item>
+          <List.Item>
+            <Link
+              href="https://www.instagram.com/renatmc25/"
+              target="_blank"
+              className={classes.link}
+            >
+              <Button
+                variant="subtle"
+                color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+                leftIcon={<IoLogoInstagram size={16} />}
+                sx={{ fontSize: 16 }}
+              >
+                @renatmc25
+              </Button>
+            </Link>
+          </List.Item>
+          <List.Item>
+            <Link
+              href="https://www.instagram.com/eltruforce/"
+              target="_blank"
+              className={classes.link}
+            >
+              <Button
+                variant="subtle"
+                color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+                leftIcon={<IoLogoInstagram size={16} />}
+                sx={{ fontSize: 16 }}
+              >
+                @eltruforce
+              </Button>
+            </Link>
+          </List.Item>
+        </List>
       </Section>
     </Container>
   )
