@@ -1,6 +1,7 @@
 import { Box, Center, Container } from '@mantine/core'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import Footer from '../footer'
 import Navbar from '../navbar'
 import VoxelMegamanLoader from '../voxel-megaman-loader'
 
@@ -23,6 +24,7 @@ const Main = ({ children, router }) => {
       <Container size="md" pt={42}>
         <LazyVoxelMegaman />
         {children}
+        <Footer />
       </Container>
     </Box>
   )
