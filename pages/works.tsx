@@ -4,6 +4,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 
 const thumbWebXR = '/images/works/webxr_examples.png'
+const thumbPokemonThree = '/images/works/pokemon_three.png'
 
 const Works = () => {
   return (
@@ -25,6 +26,16 @@ const Works = () => {
             >
               A sequence of webXR examples from basic to complex with ThreeJS
               and R3F
+            </WorkGridItem>
+          </Section>
+
+          <Section>
+            <WorkGridItem
+              id="pokemon-three"
+              title="Pokemon Three"
+              thumbnail={thumbPokemonThree}
+            >
+              A basic Pokemon webpage template made with ThreeJS and NextJS
             </WorkGridItem>
           </Section>
         </SimpleGrid>

@@ -22,24 +22,23 @@ const useStyles = createStyles(theme => ({
 const Work = () => {
   const { classes, theme } = useStyles()
   return (
-    <Layout title="WebXR Examples">
+    <Layout title="Pokemon Three">
       <Container size="sm">
         <Title>
-          WebXR Examples <Badge color="gray">2022-</Badge>
+          Pokemon Three <Badge color="gray">2022-</Badge>
         </Title>
         <Paragraph>
-          A sequence of webXR examples from basic to complex with ThreeJS and
-          R3F.
+          A basic Pokemon webpage template made with ThreeJS and NextJS.
         </Paragraph>
         <List ml={16} my={16} style={{ listStyleType: 'none' }}>
           <List.Item>
             <Meta>Website</Meta>
             <Link
-              href="https://webxr-examples.vercel.app/"
+              href="https://pokemon-vercel-lac.vercel.app/"
               className={classes.link}
               target="_blank"
             >
-              https://webxr-examples.vercel.app/{' '}
+              https://pokemon-vercel-lac.vercel.app/{' '}
               <BiLinkExternal
                 style={{ marginBottom: '-4px', marginLeft: '2px' }}
               />
@@ -47,23 +46,21 @@ const Work = () => {
           </List.Item>
           <List.Item>
             <Meta>Platform</Meta>
-            <span>Windows/macOS/Linux</span>
+            <span>Windows/macOS/Linux/iOS/Android</span>
           </List.Item>
           <List.Item>
             <Meta>Stack</Meta>
-            <span>
-              Javascript, Typescript, NextJS, React, ThreeJS, React-Three-Fiber
-            </span>
+            <span>Typescript, NextJS, React, ThreeJS, CSS</span>
           </List.Item>
         </List>
 
         <WorkImage
-          src="/images/works/webxr-examples_01.png"
-          alt="WebXR Examples"
+          src="/images/works/pokemon-three_01.png"
+          alt="Pokemon Three"
         />
         <WorkImage
-          src="/images/works/webxr-examples_02.png"
-          alt="WebXR Examples"
+          src="/images/works/pokemon-three_02.png"
+          alt="Pokemon Three"
         />
       </Container>
     </Layout>
