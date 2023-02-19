@@ -52,6 +52,19 @@ const Work = () => {
             <Meta>Stack</Meta>
             <span>Typescript, NextJS, React, ThreeJS, CSS</span>
           </List.Item>
+          <List.Item>
+            <Meta>Source</Meta>
+            <Link
+              href="https://github.com/eltruforce/pokemon-vercel"
+              className={classes.link}
+              target="_blank"
+            >
+              https://github.com/eltruforce/pokemon-vercel{' '}
+              <BiLinkExternal
+                style={{ marginBottom: '-4px', marginLeft: '2px' }}
+              />
+            </Link>
+          </List.Item>
         </List>
 
         <WorkImage

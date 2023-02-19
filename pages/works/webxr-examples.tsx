@@ -55,6 +55,19 @@ const Work = () => {
               Javascript, Typescript, NextJS, React, ThreeJS, React-Three-Fiber
             </span>
           </List.Item>
+          <List.Item>
+            <Meta>Source</Meta>
+            <Link
+              href="https://github.com/eltruforce/webxr-examples"
+              className={classes.link}
+              target="_blank"
+            >
+              https://github.com/eltruforce/webxr-examples{' '}
+              <BiLinkExternal
+                style={{ marginBottom: '-4px', marginLeft: '2px' }}
+              />
+            </Link>
+          </List.Item>
         </List>
 
         <WorkImage

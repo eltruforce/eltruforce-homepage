@@ -16,7 +16,7 @@ const Main = ({ children, router }) => {
     <Box pb={24}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Ichiro Macedo - ElTruforce Homepage</title>
+        <title>Ichiro Macedo - ElTruforce's Homepage</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

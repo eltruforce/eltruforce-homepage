@@ -1,28 +1,36 @@
-import styled from '@emotion/styled'
-import { Text, useMantineColorScheme } from '@mantine/core'
+import { Box, createStyles, Text, useMantineColorScheme } from '@mantine/core'
 import Link from 'next/link'
-import ETprintIcon from './icons/footprint'
+import ETprintIcon from './icons/etprint'
 
-const LogoBox = styled.span`
-  font-weight: bold;
-  font-size: 18px;
-  display: inline-flex;
-  align-items: center;
-  height: 30px;
-  line-height: 20px;
-  padding: 10px;
-  padding-right: 30px;
+const useStyles = createStyles(theme => ({
+  LogoBox: {
+    fontWeight: 'bold',
+    fontSize: '18px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    height: '30px',
+    lineHeight: '20px',
+    padding: '10px',
+    paddingRight: '30px',
 
-  > svg {
-    transition: 200ms ease;
+    '&:hover': {
+      cursor: 'pointer'
+    },
+
+    '> svg': {
+      transition: '200ms ease'
+    },
+
+    '&:hover > svg': {
+      transform: 'rotate(20deg)',
+      cursor: 'pointer'
+    }
   }
-  &:hover > svg {
-    transform: rotate(20deg);
-  }
-`
+}))
 
 const Logo = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const { classes, theme } = useStyles()
   return (
     <Link
       href="/"
@@ -31,7 +39,7 @@ const Logo = () => {
         textDecoration: 'none'
       }}
     >
-      <LogoBox>
+      <Box className={classes.LogoBox}>
         <ETprintIcon />
         <Text
           color={colorScheme === 'light' ? 'gray.9' : 'gray.0'}
@@ -44,7 +52,7 @@ const Logo = () => {
         >
           Ichiro Macedo
         </Text>
-      </LogoBox>
+      </Box>
     </Link>
   )
 }
