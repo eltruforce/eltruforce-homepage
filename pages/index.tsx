@@ -10,7 +10,7 @@ import {
   useMantineColorScheme
 } from '@mantine/core'
 import Link from 'next/link'
-import { BiChevronRight } from 'react-icons/bi'
+import { BiChevronRight, BiPhone } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
 import { IoLogoGithub, IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io5'
 import { BioSection, BioYear } from '../components/bio'
@@ -97,15 +97,15 @@ const Page = () => {
           About Me
         </Title>
         <Paragraph>
-          I'm a Bachelor of Electronic Engineering based in Peru and currently
-          moving to New Zealand. I've had the opportunity to work on some
-          exciting projects that bring technology to the fields of medicine,
-          art, and services. I've had a chance to gain experience in various
-          industries, including mining, web development, and deep learning. In
-          my free time, I love combining my technical skills with my artistic
-          side through personal projects. I'm always on the lookout for new and
-          interesting things to learn and explore, so I'm excited to see what
-          opportunities this next step in my career brings.
+          I'm a Bachelor of Electronic Engineering from Peru based in New
+          Zealand. I've had the opportunity to work on some exciting projects
+          that bring technology to the fields of medicine, art, and services.
+          I've had a chance to gain experience in various industries, including
+          mining, web development, and deep learning. In my free time, I love
+          combining my technical skills with my artistic side through personal
+          projects. I'm always on the lookout for new and interesting things to
+          learn and explore, so I'm excited to see what opportunities this next
+          step in my career brings.
         </Paragraph>
         <Box sx={{ textAlign: 'center' }} my={16}>
           <Link href="/works" scroll={false} passHref>
@@ -269,6 +269,16 @@ const Page = () => {
                 @eltruforce
               </Button>
             </Link>
+          </List.Item>
+          <List.Item>
+            <Button
+              variant="subtle"
+              color={colorScheme === 'dark' ? 'cyan.3' : 'cyan.6'}
+              leftIcon={<BiPhone size={16} />}
+              sx={{ fontSize: 16 }}
+            >
+              +64 272478591
+            </Button>
           </List.Item>
           <List.Item>
             <Link
