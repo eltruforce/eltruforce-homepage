@@ -4,7 +4,7 @@ import { Model } from '../lib/model'
 import { MegamanContainer, MegamanSpinner } from './voxel-megaman-loader'
 import { useRef, useState } from 'react'
 import { Button, Group, useMantineColorScheme } from '@mantine/core'
-import { BiPlay, BiPlayCircle } from 'react-icons/bi'
+import { BiPlayCircle } from 'react-icons/bi'
 
 interface Props {
   activeAnimation: boolean
@@ -14,11 +14,12 @@ const AntimatedVoxel = (props: Props) => {
   const orbitRef = useRef(null)
   const { activeAnimation } = props
 
-  useFrame(({ clock }) => {
-    let frame = clock.getElapsedTime()
+  const [frameCount, setFrameCount] = useState(0)
+  useFrame(() => {
+    setFrameCount(count => count + 1)
 
     orbitRef.current.autoRotateSpeed =
-      frame <= 1.25 ? 800 - 100 * frame - 100 : 8
+      frameCount <= 40.0 ? 800 - 100 * (frameCount / 60) - 100 : 8
   })
   return (
     <>
@@ -52,7 +53,7 @@ export default function VoxelMegaman() {
       </Canvas>
       <Group position="center" mt={0}>
         <Button
-        radius="xl"
+          radius="xl"
           compact
           leftIcon={
             <BiPlayCircle
