@@ -86,7 +86,8 @@ const Page = () => {
             size={100}
             radius={100}
             display="inline-block"
-            src="/images/eltruforce.png"
+            // src="/images/eltruforce.png"
+            src="/images/profile.jpg"
             alt="Profile Image"
           />
         </Box>
