@@ -5,6 +5,8 @@ import Section from '../components/section'
 
 const thumbWebXR = '/images/works/webxr_examples.png'
 const thumbPokemonThree = '/images/works/pokemon_three.png'
+const thumbWidgetsApp = '/images/works/widgets-app.png'
+const thumbCinemapedia = '/images/works/cinemapedia.png'
 
 const Works = () => {
   return (
@@ -36,6 +38,30 @@ const Works = () => {
               thumbnail={thumbPokemonThree}
             >
               A basic Pokemon webpage template made with ThreeJS and NextJS
+            </WorkGridItem>
+          </Section>
+
+          <Section>
+            <WorkGridItem
+              id="widgets-app"
+              title="Widgets App"
+              thumbnail={thumbWidgetsApp}
+              isVertical={true}
+            >
+              Flutter app showcasing Material 3 widgets and UI components with
+              Riverpod
+            </WorkGridItem>
+          </Section>
+
+          <Section>
+            <WorkGridItem
+              id="cinemapedia"
+              title="Cinemapedia"
+              thumbnail={thumbCinemapedia}
+              isVertical={true}
+            >
+              Movie discovery app powered by The MovieDB API with Flutter and
+              Riverpod
             </WorkGridItem>
           </Section>
         </SimpleGrid>
