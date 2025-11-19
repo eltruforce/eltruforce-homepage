@@ -19,7 +19,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
   </Box>
 )
 
-export const WorkGridItem = ({ children, id, title, thumbnail }) => (
+export const WorkGridItem = ({ children, id, title, thumbnail, isVertical = false }) => (
   <Box w="100%" sx={theme => ({ textAlign: 'center' })}>
     <Link
       href={`/works/${id}`}
@@ -33,8 +33,10 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
       <Image
         src={thumbnail}
         alt={title}
-        className="grid-item-thumbnail"
-        placeholder="blur"
+        radius="md"
+        height={200}
+        fit={isVertical ? 'contain' : 'cover'}
+        w="100%"
       />
       <div>
         <Text mt={8} size={20}>
@@ -51,6 +53,11 @@ export const GridItemStyle = () => (
     styles={`
       .grid-item-thumbnail {
         border-radius: 12px;
+      }
+
+      .grid-item-thumbnail-vertical {
+        border-radius: 12px;
+        object-fit: contain;
       }
     `}
   />

@@ -39,8 +39,17 @@ export const Title = ({ children }) => {
   )
 }
 
-export const WorkImage = ({ src, alt }) => (
-  <Image radius="lg" w="full" src={src} alt={alt} mb={16} />
+export const WorkImage = ({ src, alt, isVertical = false }) => (
+  <Image
+    radius="lg"
+    w="full"
+    src={src}
+    alt={alt}
+    mb={16}
+    fit={isVertical ? 'contain' : undefined}
+    height={isVertical ? 600 : undefined}
+    sx={isVertical ? { display: 'block', margin: '0 auto 16px' } : undefined}
+  />
 )
 
 export const Meta = ({ children }) => (
