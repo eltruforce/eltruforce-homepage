@@ -54,7 +54,7 @@ const Page = () => {
         p={9}
         mb={18}
       >
-        Hi there! I&apos;m a novice web developer based in Peru!
+        Hi there! I&apos;m a Front-End Developer based in Auckland, New Zealand!
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box sx={{ flexGrow: 1 }}>
@@ -62,8 +62,8 @@ const Page = () => {
             Ichiro Macedo
           </Title>
           <Text size="sm">
-            ElTruforce (Developer / Bachelor's in Electronic Engineering/ Pixel
-            Art Hobbyist)
+            ElTruforce (Front-End Developer / Bachelor&apos;s in Electronic
+            Engineering / Pixel Art Hobbyist)
           </Text>
         </Box>
         <Box
@@ -98,15 +98,16 @@ const Page = () => {
           About Me
         </Title>
         <Paragraph>
-          I'm a Bachelor of Electronic Engineering from Peru based in New
-          Zealand. I've had the opportunity to work on some exciting projects
-          that bring technology to the fields of medicine, art, and services.
-          I've had a chance to gain experience in various industries, including
-          mining, web development, and deep learning. In my free time, I love
-          combining my technical skills with my artistic side through personal
-          projects. I'm always on the lookout for new and interesting things to
-          learn and explore, so I'm excited to see what opportunities this next
-          step in my career brings.
+          I&apos;m a Front-End Developer based in Auckland, New Zealand, with
+          experience in Flutter Web and React, as well as hands-on work with
+          Three.js and React Three Fiber for 3D projects. I focus on organizing
+          interfaces, maintaining clean code, and solving API integration
+          challenges. I&apos;m particularly interested in web or mobile products
+          that involve visual components. With a background in Electronic
+          Engineering from Peru, I&apos;ve had the opportunity to work across
+          various fields including deep learning research and data management.
+          In my free time, I love combining my technical skills with my artistic
+          side through pixel art and personal projects.
         </Paragraph>
         <Box sx={{ textAlign: 'center' }} my={16}>
           <Link href="/works" scroll={false} passHref>
@@ -159,33 +160,32 @@ const Page = () => {
           Work Experience
         </Title>
         <BioSection>
-          <BioYear>2020</BioYear>
-          Worked at{' '}
+          <BioYear>2023 to present</BioYear>
+          Working at{' '}
           <Link
-            href="https://www.stratedu.com/"
+            href="https://inviol.com/"
             target="_blank"
             className={classes.link}
           >
-            Stratedu
+            Inviol Limited
           </Link>{' '}
-          in Surface Mining Blasting Consulting, Peru.
+          as a Software Engineer (Front-End Flutter), Auckland, New Zealand.
         </BioSection>
         <BioSection>
-          <BioYear>2021</BioYear>
+          <BioYear>2022 to 2023</BioYear>
           Worked at{' '}
           <Link
-            href="https://www.stratedu.com/"
+            href="https://minsky.cc/"
             target="_blank"
             className={classes.link}
           >
-            Stratedu
+            Minsky
           </Link>{' '}
-          in Consulting for Course Material Development for Seminars in
-          Lubrication, Engines, and Vibration Analysis as a freelancer and in
-          Personnel Sizing Consultancy in Mining, Peru.
+          as a Software Developer (Python Data Management / React & Next.js),
+          Lima, Peru.
         </BioSection>
         <BioSection>
-          <BioYear>2022</BioYear>
+          <BioYear>2022 to 2023</BioYear>
           Worked at{' '}
           <Link
             href="https://utec.edu.pe/en"
@@ -194,19 +194,21 @@ const Page = () => {
           >
             UTEC
           </Link>{' '}
-          in a deep learning with EEG classification project, Peru.
-        </BioSection>
-        <BioSection>
-          <BioYear>2022 to present</BioYear>
-          Working at{' '}
+          as a Research Assistant in Deep Learning (Python, PyTorch). Co-author
+          of article published in{' '}
           <Link
-            href="https://minsky.cc/"
+            href="https://ieeexplore.ieee.org/document/10578037"
             target="_blank"
             className={classes.link}
           >
-            Minsky
-          </Link>{' '}
-          as a developer, Peru.
+            IEEE Xplore
+          </Link>
+          , Lima, Peru.
+        </BioSection>
+        <BioSection>
+          <BioYear>2020 to 2021</BioYear>
+          Worked at Cotexsa Peru in Web Development Support (Frontend), Lima,
+          Peru.
         </BioSection>
       </Section>
       <Section delay={0.4}>
